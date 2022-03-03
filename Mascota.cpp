@@ -1,62 +1,75 @@
 #include <iostream>
 #include "Mascota.h"
 
-Mascota::inicializar(Mascota){
+// costructor Mascota
 
+Mascota::Mascota(string name, string  raza, float peso, int edad, string sangre, bool estatus, string fechaDef){
+    this -> name = name;
+    this -> raza = raza;
+    this -> peso = peso;
+    this -> edad = edad;
+    this -> tipoS = sangre;
+    this -> estatus = estatus;
+    this -> fechaDef = fechaDef;
 }
 
-void Mascota::setName(string){
+// sets Mascota
 
+void Mascota::setName(string name){
+   this -> name = name;
 }
 
-void Mascota::setRaza(string){
-
+void Mascota::setRaza(string raza){
+    this -> raza = raza;
 }
 
-void Mascota::setPeso(float){
-
+void Mascota::setPeso(float peso){
+    this -> peso = peso;
 }
 
-void Mascota::setEdad(int){
-
+void Mascota::setEdad(int edad){
+    this -> edad = edad;
 }
 
-void Mascota::setTipoSangre(string){
-
+void Mascota::setTipoS(string sangre){
+    this -> tipoS = sangre;
 }
 
-void Mascota::setStatus(bool){
-
+void Mascota::setEstatus(bool estatus){
+    this -> estatus = estatus; // False: muerto, True: Vivo y coleando, si tiene cola
 }
 
-void Mascota::setFechaDefuncion(string){
-
+void Mascota::setFechaDef(string fechaDef){
+    this -> fechaDef = fechaDef;
 }
+
+// gets Mascota
+/*======================================================== */
 
 string Mascota::getName(){
-
+    return name;
 }
 
 string Mascota::getRaza(){
-
+    return raza;
 }
 
 float Mascota::getPeso(){
-
+    return peso;
 }
 
 int Mascota::getEdad(){
-
+    return edad;
 }
 
 string Mascota::getTipoSangre(){
-
+    return tipoS;
 }
 
-bool Mascota::getStatus(){
-
+bool Mascota::getEstatus(){
+    return estatus;
 }
 
 string Mascota::getFechaDefuncion(){
-
+    return fechaDef;
 }

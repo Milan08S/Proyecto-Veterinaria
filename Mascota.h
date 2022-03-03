@@ -1,34 +1,47 @@
-#ifndef "MASCOTA_H"
-#define "MASCOTA_H"
+#ifndef MASCOTA_H
+#define MASCOTA_H
+
 #include <iostream>
 
-using namespace std;
+using std::string;
+using std::cout;
+using std::cin;
 
 class Mascota{
     private:
         string name;
         string raza;
+        string tipo;
         float peso;
         int edad;
-        string tipoSangre;
-        bool status;
-        string fechaDefuncuin;
+        string tipoS; //tipo Sangre
+        bool estatus;
+        string fechaDef; //fecha defuncion
+
     public:
-        inicializar(Mascota);
-        void setName(string);
-        void setRaza(string);
-        void setPeso(float);
-        void setEdad(int);
-        void setTipoSangre(string);
-        void setStatus(bool);
-        void setFechaDefuncion(string)
+        //contructores
+        Mascota( string, string, float, int, string, bool, string); //todos los datos
+
+        //declaracion set
+        void setName( string );
+        void setRaza( string );
+        void setTipo( string );
+        void setPeso( float );
+        void setEdad( int ); 
+        void setFechaDef( string );
+        void setTipoS( string );
+        void setEstatus( bool );
+
+        //declaracion get();
         string getName();
-        string getRaza();
         float getPeso();
         int getEdad();
-        string getTipoSangre();
         bool getStatus();
-        string getFechaDefuncion()
+        string getRaza();
+        int getEdad();
+        string getTipoSangre();
+        bool getEstatus();
+        string getFechaDefuncion();
 };
 
 #endif
