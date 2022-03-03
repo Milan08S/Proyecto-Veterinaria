@@ -3,14 +3,16 @@
 
 // costructor Mascota
 
-Mascota::Mascota(string name, string  raza, float peso, int edad, string sangre, bool estatus, string fechaDef){
+Mascota::Mascota(string name, string tipo, string  raza, float peso, int edad, string sangre, bool estatus, string fechaDef){
     this -> name = name;
+    this -> tipo = tipo;
     this -> raza = raza;
     this -> peso = peso;
     this -> edad = edad;
     this -> tipoS = sangre;
     this -> estatus = estatus;
     this -> fechaDef = fechaDef;
+    this -> tipo = tipo;
 }
 
 // sets Mascota
@@ -21,6 +23,10 @@ void Mascota::setName(string name){
 
 void Mascota::setRaza(string raza){
     this -> raza = raza;
+}
+
+void Mascota::setTipo(string tipo){
+    this -> tipo = tipo;
 }
 
 void Mascota::setPeso(float peso){
@@ -60,6 +66,10 @@ float Mascota::getPeso(){
 
 int Mascota::getEdad(){
     return edad;
+}
+
+string Mascota::getTipo(){
+    return tipo;
 }
 
 string Mascota::getTipoSangre(){

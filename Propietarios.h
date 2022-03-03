@@ -14,6 +14,8 @@ class Propietario{
         string email;
         int telefono;
     public:
+        //cosntructor
+        Propietario(int, string, string, int);
 
         //sets
         void setId(int);

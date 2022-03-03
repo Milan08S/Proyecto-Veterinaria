@@ -20,7 +20,7 @@ class Mascota{
 
     public:
         //contructores
-        Mascota( string, string, float, int, string, bool, string); //todos los datos
+        Mascota( string, string, string, float, int, string, bool, string); //todos los datos
 
         //declaracion set
         void setName( string );
@@ -36,6 +36,7 @@ class Mascota{
         string getName();
         float getPeso();
         int getEdad();
+        string getTipo();
         bool getStatus();
         string getRaza();
         int getEdad();
