@@ -12,12 +12,13 @@ class PropietarioxMascota{
 
     public:
         //constructor
-        PropietarioxMascota( Propietario propietario, Mascota mascota, int idPropMasco );
+        int propietarioxMascota( Propietario propietario, Mascota mascota, int idPropMasco );
 
         //gets
         Propietario getPropietario();
         Mascota getMascota();
         int getIdPropMasco();
+        Mascota getEstatusMasc(Mascota mascota);
 };
 
 #endif

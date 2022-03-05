@@ -35,7 +35,6 @@ class Mascota{
         //declaracion get();
         string getName();
         float getPeso();
-        int getEdad();
         string getTipo();
         bool getStatus();
         string getRaza();

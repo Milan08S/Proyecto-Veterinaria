@@ -10,20 +10,25 @@
 #include <unordered_map>
 #include <iomanip>
 #include <vector>
+#include <iterator>
+#include <map>
 
-using std::string;
+/*using std::string;
 using std::cout;
 using std::cin;
 using std::vector;
 using std::unordered_map;
 using std::make_pair;
-class Veterinaria
-{
+using std::iterator;*/
+using namespace std;
+
+class Veterinaria{
 private:
     vector<PropietarioxMascota>propietariosXMascota;
-    unordered_map< int, Propietario >unmapPropietarios;
-    unordered_map< int, Mascota >unmapMascota;
-
+    unordered_map< int, Propietario > unmapPropietarios;
+    unordered_map< int, Propietario >:: iterator itr;
+    unordered_map< int, Mascota > unmapMascota;
+    unordered_map< int, Mascota >:: iterator itr2;
 public:
     void imprimirPropietario();
     void imprimirNumnPropietario();
