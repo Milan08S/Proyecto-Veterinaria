@@ -14,8 +14,8 @@ class Propietario{
         string email;
         int telefono;
     public:
-        //cosntructor
-        Propietario(int, string, string, int);
+        //constructor
+        Propietario( string name, string email, int telefono);
 
         //sets
         void setId(int);

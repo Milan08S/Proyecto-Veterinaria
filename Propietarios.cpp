@@ -1,8 +1,7 @@
-#include "Propietarios.h"
 #include <iostream>
+#include "Propietarios.h"
 
-Propietario::Propietario(int id, string name, string email, int telefono){
-    this -> id = id;
+Propietario::Propietario(string name, string email, int telefono){
     this -> name = name;
     this -> telefono = telefono;
     this -> email = email;

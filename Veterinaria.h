@@ -16,6 +16,7 @@ using std::cout;
 using std::cin;
 using std::vector;
 using std::unordered_map;
+using std::make_pair;
 class Veterinaria
 {
 private:
