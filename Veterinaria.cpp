@@ -60,6 +60,7 @@ void Veterinaria::nuevoPropietario(){
     cin >> id;
     cin >> email;
     cin >> telefono;
+    
     Propietario propietario( name, email, telefono );
     unmapPropietarios.insert( make_pair( id, propietario ) );
 }
