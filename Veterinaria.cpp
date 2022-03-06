@@ -2,20 +2,19 @@
 #include "Veterinaria.h"
 
 void Veterinaria::imprimirPropietario(){
-    /*for( itr = unmapPropietarios.begin(); itr != unmapPropietarios.end(); itr++ ){
-        cout << itr->first << " " << itr->second;
-    }*/
+    cout << "\n\nPropietariosd\n===================\nID          NOMBRE\n===================\n";
     for( auto x:unmapPropietarios ){
         cout<< x.first << " " << x.second.getNombre();
     }
 }
 
 void Veterinaria::imprimirNumnPropietario(){
-
+    cout << unmapPropietarios.size();
 
 }
 
 void Veterinaria::imprimirMascota(){
+    cout << "\n\nMascotas\n===================\nID          NOMBRE\n===================\n";
     for (auto y:unmapMascota ){
         cout << y.first << " " << y.second.getName();
     }
@@ -27,7 +26,7 @@ void Veterinaria::mascotasPropietario(){
 }
 
 void Veterinaria::propietariosMascotas(){
-
+    //propietariosMascotas (unmapPropietarios, unmapMascota, 1);
 
 }
 
@@ -37,28 +36,30 @@ void Veterinaria::nuevaMascota(){
     int edad;
     string tipoS; //tipo Sangre
     bool estatus;
-    int id = 1;
+    int id;
     
+    cout << "Ingrese ID: ";
+    cin >> id;
+    cin.ignore();
     cout << "Ingrese nombre: ";
-    cin >> name;
+    getline( cin, name );
     cout << "Ingrese tipo: ";
-    cin >> tipo;
+    getline( cin, tipo );
     cout << "Ingrese raza: ";
-    cin >> raza;
-    // error en este punto - loop del menu
+    getline( cin, raza );
     cout << "Ingrese peso: ";
     cin >> peso;
     cout << "Ingrese edad: ";
     cin >> edad;
+    cin.ignore();
     cout << "Ingrese tipo de Sangre: ";
-    cin >> tipoS;
+    getline( cin, tipoS );
     cout << "Ingrese estatus: ";
     cin >> estatus;
+    cin.ignore();
     string fechaDef = ( "NINGUNA" );
     Mascota mascota( name, tipo, raza, peso, edad, tipoS, estatus, fechaDef );
-    unmapMascota.insert( make_pair( id++, mascota ));
-
-
+    unmapMascota.insert( make_pair( id, mascota ) );
 }
 
 void Veterinaria::nuevoPropietario(){
@@ -66,12 +67,14 @@ void Veterinaria::nuevoPropietario(){
     int id;
     string email;
     int telefono;
+    cin.ignore();
     cout << "Ingrese nombre: ";
-    cin >> name;
+    getline( cin, name );
     cout << "Ingrese id: ";
     cin >> id;
+    cin.ignore();
     cout << "Ingrese email: ";
-    cin >> email;
+    getline( cin, email );
     cout << "Ingrese telefono: ";
     cin >> telefono;
     // error en este punto - loop del menu
@@ -84,8 +87,10 @@ void Veterinaria::statusMascota(Mascota mascota){
 
 }
 
-void Veterinaria::eliminarPropMascota(int id){
+void Veterinaria::eliminarMascota(int id){
     unmapMascota.erase(id);
 }
 
-//mymap.erase ("France");             erasing by key
+void Veterinaria::eliminarPropietario(int id){
+    unmapPropietarios.erase(id);
+}

@@ -1,5 +1,6 @@
 #ifndef MASCOTA_H
 #define MASCOTA_H
+#define tamanio 30
 
 #include <iostream>
 
