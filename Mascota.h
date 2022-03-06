@@ -20,6 +20,7 @@ class Mascota{
 
     public:
         //contructores
+        Mascota();
         Mascota( string, string, string, float, int, string, bool, string); //todos los datos
 
         //declaracion set

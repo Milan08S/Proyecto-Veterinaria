@@ -6,7 +6,7 @@ void Veterinaria::imprimirPropietario(){
         cout << itr->first << " " << itr->second;
     }*/
     for( auto x:unmapPropietarios ){
-        cout<< x.first << " -> " << x.second;
+        cout<< x.first << " " << x.second.getNombre();
     }
 }
 
@@ -17,7 +17,7 @@ void Veterinaria::imprimirNumnPropietario(){
 
 void Veterinaria::imprimirMascota(){
     for (auto y:unmapMascota ){
-        cout << y.first << " " << y.second;
+        cout << y.first << " " << y.second.getName();
     }
 }
 
@@ -32,20 +32,20 @@ void Veterinaria::propietariosMascotas(){
 }
 
 void Veterinaria::nuevaMascota(){
-    string name;
-    string raza;
-    string tipo;
+    string name, tipo, raza;
     float peso;
     int edad;
     string tipoS; //tipo Sangre
     bool estatus;
     int id = 1;
+    
     cout << "Ingrese nombre: ";
     cin >> name;
     cout << "Ingrese tipo: ";
     cin >> tipo;
     cout << "Ingrese raza: ";
     cin >> raza;
+    // error en este punto - loop del menu
     cout << "Ingrese peso: ";
     cin >> peso;
     cout << "Ingrese edad: ";
@@ -74,16 +74,18 @@ void Veterinaria::nuevoPropietario(){
     cin >> email;
     cout << "Ingrese telefono: ";
     cin >> telefono;
-    
+    // error en este punto - loop del menu
     Propietario propietario( name, email, telefono );
     unmapPropietarios.insert( make_pair( id, propietario ) );
 }
 
-void Veterinaria::statusMascota(){
-    //mascota.getEstatusMasc(mascota);
-}
-
-void Veterinaria::eliminarPropMascota(){
-
+void Veterinaria::statusMascota(Mascota mascota){
+    mascota.getEstatus();
 
 }
+
+void Veterinaria::eliminarPropMascota(int id){
+    unmapMascota.erase(id);
+}
+
+//mymap.erase ("France");             erasing by key

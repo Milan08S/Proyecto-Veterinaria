@@ -15,6 +15,7 @@ class Propietario{
         int telefono;
     public:
         //constructor
+        Propietario();
         Propietario( string name, string email, int telefono);
 
         //sets

@@ -9,6 +9,7 @@
 #include <utility>
 #include <unordered_map>
 #include <iomanip>
+#include <conio.h>
 #include <vector>
 #include <iterator>
 #include <map>
@@ -37,8 +38,8 @@ public:
     void propietariosMascotas();
     void nuevaMascota();
     void nuevoPropietario();
-    void statusMascota();
-    void eliminarPropMascota();
+    void statusMascota(Mascota mascota);
+    void eliminarPropMascota(int id);
 };
 
 #endif
