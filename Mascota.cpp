@@ -1,7 +1,17 @@
-#include <iostream>
 #include "Mascota.h"
 
 // costructor Mascota
+
+Mascota::Mascota(){
+    this -> name = ("Default");
+    this -> tipo = ("Default");
+    this -> raza = ("Default");
+    this -> peso = 0;
+    this -> edad = 0;
+    this -> tipoS = ("Default");
+    this -> estatus = 0;
+    this -> fechaDef = ("Default");
+}
 
 Mascota::Mascota( string name, string tipo, string  raza, float peso, int edad, string sangre, bool estatus, string fechaDef){
     this -> name = name;
@@ -12,10 +22,9 @@ Mascota::Mascota( string name, string tipo, string  raza, float peso, int edad, 
     this -> tipoS = sangre;
     this -> estatus = estatus;
     this -> fechaDef = fechaDef;
-    this -> tipo = tipo;
 }
 
-// sets Mascota
+// sets Mascota, cada uno edita un dato de la variable mascota
 
 void Mascota::setName( string name ){
    this -> name = name;
@@ -49,7 +58,9 @@ void Mascota::setFechaDef(string fechaDef){
     this -> fechaDef = fechaDef;
 }
 
-// gets Mascota
+
+
+// gets Mascota, cada uno obtiene un dato de la varible mascota
 /*======================================================== */
 string Mascota::getName(){
     return name;

@@ -1,4 +1,3 @@
-#include <iostream>
 #include "PropietarioxMascota.h"
 
 PropietarioxMascota::PropietarioxMascota()
@@ -19,4 +18,8 @@ Propietario PropietarioxMascota::getPropietario(){
 
 Mascota PropietarioxMascota::getMascota(){
         return this -> mascota;
+}
+
+int PropietarioxMascota::getIdPropMasco(){
+        return idPropMasco;
 }

@@ -1,6 +1,6 @@
 all: compilar clean
 compilar: Mascota Propietarios PropietarioxMascota Veterinaria main
-	g++ -o Salida Veterinaria.o Mascota.o Propietarios.o main.o
+	g++ -o Salida Veterinaria.o Mascota.o Propietarios.o PropietarioxMascota.o main.o
 Veterinaria: Veterinaria.cpp Veterinaria.h Mascota.h Propietarios.h PropietarioxMascota.h
 	g++ -c Veterinaria.cpp
 PropietarioxMascota: PropietarioxMascota.cpp PropietarioxMascota.h

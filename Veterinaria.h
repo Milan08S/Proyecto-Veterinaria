@@ -15,33 +15,35 @@
 #include <map>
 #include <cstdlib>
 
-using std::string;
+/*using std::string;
 using std::cout;
 using std::cin;
 using std::vector;
 using std::unordered_map;
 using std::make_pair;
 using std::iterator;
-using std::getline;
-//using namespace std;
+using std::getline;*/
+using namespace::std;
+
 
 class Veterinaria{
 private:
-    vector<PropietarioxMascota>propietariosXMascota;
+    vector<PropietarioxMascota> propietariosXMascotas;
     unordered_map< int, Propietario > unmapPropietarios;
     unordered_map< int, Mascota > unmapMascota;
 public:
 
     void mascotasPropietario();
     void propietariosMascotas();
-    void statusMascota(Mascota mascota);
+    void statusMascota();
+    void imprimirRelacion();
 
     //eliminar, editar, agregar y listar propietarios y mascotas
     void eliminarMascota(int id);
     void eliminarPropietario(int id);
 
-    void editarPorpietario();
-    void editarMascota();
+    void editarPropietario(int id);
+    void editarMascota(int id);
 
     void imprimirPropietario();
     void imprimirNumnPropietario();
@@ -49,6 +51,7 @@ public:
      
     void nuevaMascota();
     void nuevoPropietario();
+
 };
 
 #endif
