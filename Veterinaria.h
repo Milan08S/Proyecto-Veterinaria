@@ -49,6 +49,8 @@ public:
     void imprimirNumnPropietario();
     void imprimirMascota();
     
+    void imprimirMascotaIn();
+    void imprimirPropietarioIn();
 
     void nuevaMascota();
     void nuevoPropietario();

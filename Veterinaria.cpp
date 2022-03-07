@@ -19,11 +19,42 @@ void Veterinaria::imprimirMascota(){//muestra las mascotas en el sistema
     }
 }
 
-void Veterinaria::imprimirRelacion(){
+void Veterinaria::imprimirRelacion(){ //Imprime el propietario o los propietarios de la mascota
     cout << propietariosXMascotas.size();
-    cout << "\n\nImpresion Propietario Mascota\n====================\n" << "Mascota       " << "Propietario\n====================\n";
+    cout << "\n\nImpresion Propietario Mascota\n====================\n" << "Mascota       " << "Propietario          Id\n====================\n";
     for( int i = 0; i < propietariosXMascotas.size(); i++ ){
-        cout << propietariosXMascotas[ i ].getMascota()->getName() << "       " << propietariosXMascotas[ i ].getPropietario()->getNombre() << propietariosXMascotas[ i ].getIdPropMasco();
+        cout << propietariosXMascotas[ i ].getMascota()->getName() << "       " << propietariosXMascotas[ i ].getPropietario()->getNombre() << "          " << propietariosXMascotas[ i ].getIdPropMasco();
+    }
+}
+
+void Veterinaria::imprimirMascotaIn(){
+    int id;
+    cout << "Ingrese el ID de la mascota: ";
+    cin >> id;
+    cout << "\n\nMascota\n===================\nID          NOMBRE          TIPO          RAZA          PESO          EDAD          TIPO SANGRE          STATUS          FECHA DE DEFUNCION\n===================\n";
+    for(auto y:unmapMascota ){
+        if( id == y.first ){
+            cout << y.first << "          " << y.second.getName() << "          " << y.second.getTipo() << "          " << y.second.getRaza() << "          " << y.second.getPeso() << "          " << y.second.getEdad() << "          " << y.second.getTipoSangre() <<  "          " << y.second.getEstatus() << "          " << y.second.getFechaDefuncion() ;
+        }
+        else{
+            cout << "El id no existe\n";
+        }
+    }
+    
+}
+
+void Veterinaria::imprimirPropietarioIn(){
+    int id;
+    cout << "Ingrese el ID del propietario: ";
+    cin >> id;
+    cout << "\n\nPropietariosd\n===================\nID          NOMBRE          EMAIL          TELEFONO\n===================\n";
+    for( auto x:unmapPropietarios ){
+        if( id == x.first ){
+            cout<< x.first << "          " << x.second.getNombre()<<"      "<<x.second.getEmail()<<"   "<<x.second.getTelefono();
+        }
+        else{
+            cout << "El id no existe\n";
+        }
     }
 }
 
@@ -36,7 +67,7 @@ void Veterinaria::propietariosMascotas(){
     int idPropMasc = 1 + propietariosXMascotas.size();
     PropietarioxMascota pxm = PropietarioxMascota( unmapPropietarios[ idPropietario ], unmapMascota[ idMascota ], idPropMasc );
     propietariosXMascotas.push_back( pxm );
-    cout << "Se ha enlazado al propietario con la mascota";
+    cout << "Se ha enlazado al propietario con la mascota, estan en la posicion "<<idPropietario;
 }
 
 void Veterinaria::nuevaMascota(){//agrega los datos de la nueva moscota creada
@@ -109,12 +140,23 @@ void Veterinaria::statusMascota(){//edita el status de una mascota
 }
 
 void Veterinaria::eliminarMascota(int id){//elimina una mascota segun su id
+    int posicion;
     unmapMascota.erase(id);
+    cout << "Digite la posicion en donde se guardo la mascota: ";
+    cin >> posicion;
+    for(int i=posicion;propietariosXMascotas.size();i++){
+        propietariosXMascotas[posicion]=propietariosXMascotas[posicion+1];
+    }
 }
 
 void Veterinaria::eliminarPropietario( int id ){//elimina un propietario segun su id
+    int posicion;
     unmapPropietarios.erase(id);
-
+    cout << "Digite la posicion en donde se guardo la mascota: ";
+    cin >> posicion;
+    for(int i=posicion;propietariosXMascotas.size();i++){
+        propietariosXMascotas[posicion]=propietariosXMascotas[posicion+1];
+    }
 }
 
 void Veterinaria::editarPropietario( int id ){//edita la informacion de un propietario sigun su id

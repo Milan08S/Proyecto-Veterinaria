@@ -10,7 +10,7 @@ void menu(Veterinaria veterinaria){
     bool estatus;
     string fechaDef;
     do{
-        cout<<"\n\n***Menu***\n============\n1. Agregar mascota\n2. Agregar propietario\n3. Imprimir Mascotas\n4. Imprimir Propietarios\n5. Editar mascota\n6. Editar propietario\n7. Eliminar mascota\n8. Eliminar propietario\n9. Numero de propietarios\n10. Relacion Propietario Mascota\n11. Estatus Mascota\n12. Imprimir Relacion propietarioxMascota\n0. Salir\nOpcion: ";
+        cout<<"\n\n***Menu***\n============\n1. Agregar mascota\n2. Agregar propietario\n3. Imprimir Mascotas\n4. Imprimir Propietarios\n5. Editar mascota\n6. Editar propietario\n7. Eliminar mascota\n8. Eliminar propietario\n9. Numero de propietarios\n10. Relacion Propietario Mascota\n11. Estatus Mascota\n12. Imprimir Relacion propietarioxMascota\n13. Imprimir Informacion Mascota\n14. Imprimir informacion Propietario\n0. Salir\nOpcion: ";
         cin>>option;
         switch( option ){
             case 1:
@@ -56,6 +56,12 @@ void menu(Veterinaria veterinaria){
                 break;
             case 12:
                 veterinaria.imprimirRelacion();
+                break;
+            case 13:
+                veterinaria.imprimirMascotaIn();
+                break;
+            case 14:
+                veterinaria.imprimirPropietarioIn();
                 break;
             case 0:
                 cout << "\nGracias por utilizar nuestro sistema, vuelva pronto :)\n";
