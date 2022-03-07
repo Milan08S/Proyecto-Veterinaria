@@ -12,14 +12,15 @@ PropietarioxMascota::PropietarioxMascota( Propietario propietario, Mascota masco
         this -> idPropMasco = idPropMasco;
 }
 
-Propietario PropietarioxMascota::getPropietario(){
-        return this -> propietario;
+Propietario* PropietarioxMascota::getPropietario(){
+        return &this -> propietario;
 }
 
-Mascota PropietarioxMascota::getMascota(){
-        return this -> mascota;
+Mascota* PropietarioxMascota::getMascota(){
+        return &this -> mascota;
 }
 
 int PropietarioxMascota::getIdPropMasco(){
         return idPropMasco;
 }
+

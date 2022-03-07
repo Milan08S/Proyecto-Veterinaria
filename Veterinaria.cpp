@@ -23,7 +23,7 @@ void Veterinaria::imprimirRelacion(){
     cout << propietariosXMascotas.size();
     cout << "\n\nImpresion Propietario Mascota\n====================\n" << "Mascota       " << "Propietario\n====================\n";
     for( int i = 0; i < propietariosXMascotas.size(); i++ ){
-        cout << propietariosXMascotas[ i ].getMascota().getName() << "       " << propietariosXMascotas[ i ].getPropietario().getNombre() << propietariosXMascotas[ i ].getIdPropMasco();
+        cout << propietariosXMascotas[ i ].getMascota()->getName() << "       " << propietariosXMascotas[ i ].getPropietario()->getNombre() << propietariosXMascotas[ i ].getIdPropMasco();
     }
 }
 

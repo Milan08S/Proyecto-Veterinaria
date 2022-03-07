@@ -16,8 +16,8 @@ class PropietarioxMascota{
         PropietarioxMascota( Propietario propietario, Mascota mascota, int idPropMasco );
 
         //gets
-        Propietario getPropietario();
-        Mascota getMascota();
+        Propietario* getPropietario();
+        Mascota* getMascota();
         int getIdPropMasco();
 };
 
